@@ -4,6 +4,7 @@ import java.util.*;
 import java.rmi.*;
 import xotd.XotdService;
 
+
 public class XotdClientMain {
 
 	public static void printModes() {
@@ -68,11 +69,11 @@ public class XotdClientMain {
 				switch (mode) {
 				case 1 : 
 					String qotd = xotd.getQotd();
-					System.out.println("[RMI-hjgwak-Client] Qotd : " + qotd);
+					System.out.println("[RMI-hjgwak-Client] Qotd : \n" + qotd);
 					break;
 				case 2 :
 					String wotd = xotd.getWotd();
-					System.out.println("[RMI-hjgwak-Client] Qotd : " + wotd);
+					System.out.println("[RMI-hjgwak-Client] Qotd : \n" + wotd);
 					break;
 				case 3 :
 					break;
