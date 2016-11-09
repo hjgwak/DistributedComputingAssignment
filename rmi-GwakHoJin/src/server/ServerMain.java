@@ -15,7 +15,6 @@ public class ServerMain {
 //		}
 		
 		/*
-		 * RMI의 portNumber를 -p옵션을 통해 지정할 수 있도록 한다. Default 1099
 		 * Allow portNumber for RMI by passing argument with -p option. Default 1099
 		 */
 		int portNumber = 1099;
@@ -37,8 +36,6 @@ public class ServerMain {
 		
 		
 		/*
-		 * XotdServiceImpl 객체를 만들어서 rmi-hjgwak이라는 이름으로 바인딩 시킨다.
-		 * 옵션으로 주어진 portNumber가 있을 경우 해당 port에 바인딩 시킨다.
 		 * Binding XotdServiceImpl object to registry named rmi-hjgwak
 		 * If portNumber was given through argument, binding to the passed port
 		 */
@@ -60,7 +57,6 @@ public class ServerMain {
 		}
 		
 		/*
-		 * Binding 결과를 출력
 		 * Print Binding result.
 		 */
 		if (bind_success) {

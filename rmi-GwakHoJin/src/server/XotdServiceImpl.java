@@ -20,8 +20,8 @@ public class XotdServiceImpl extends UnicastRemoteObject implements XotdService 
 	
 	@Override
 	public String getQotd() throws RemoteException, IOException {
-//		Document doc = Jsoup.connect("http://www.quotationspage.com/qotd/previous.html").get();
-		Document doc = Jsoup.connect("http://www.quotationspage.com/qotd.html").get();
+		Document doc = Jsoup.connect("http://www.quotationspage.com/qotd/previous.html").get();
+//		Document doc = Jsoup.connect("http://www.quotationspage.com/qotd.html").get();
 		Elements quotations = doc.select(".quote a");
 		Elements authors = doc.select(".author b a");
 		
@@ -50,7 +50,7 @@ public class XotdServiceImpl extends UnicastRemoteObject implements XotdService 
 		Elements synos = doc.select(".WoDSyn");
 		Elements usages = doc.select(".WoDUsage");
 		
-		String[] res_list = new String[words.size()];
+        String[] res_list = new String[words.size()];
 		
 		int idx = 0;
 		for (Element word: words) { res_list[idx++] = Integer.toString(idx) + ". Word: " + word.text() + "\n"; }
@@ -65,6 +65,20 @@ public class XotdServiceImpl extends UnicastRemoteObject implements XotdService 
 		
 		String res = "";
 		for (int i = 0; i < idx; ++i) res += res_list[i];
+        
+        Elements defaults = doc.select("#WordOfTheDay tbody tr td");
+        boolean odd = true, first = true;
+        for (Element e: defaults) {
+            if (first) {
+                res += Integer.toString(idx + 1) + ". Word: " + e.text() + "\n";
+                first = false;
+                odd = false;
+            } else {
+                res += "\t" + e.text();
+                if (odd) res += "\n";
+                odd = !odd;
+            }
+        }
 		
 		if (res.equals("")) {
 			res += "There is no word here\n";

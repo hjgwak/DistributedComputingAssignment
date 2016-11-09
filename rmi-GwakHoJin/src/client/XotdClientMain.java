@@ -23,7 +23,6 @@ public class XotdClientMain {
 //		}
 		
 		/*
-		 * RMI의 portNumber를 -p옵션을 통해 지정할 수 있도록 한다.
 		 * Allow portNumber for RMI by passing argument with -p option.
 		 */
 		String portNumber = "";
@@ -40,11 +39,6 @@ public class XotdClientMain {
 		}
 		
 		/*
-		 * XotdService 인터페이스 객체를 생성한 뒤, 서버의 오브젝트를 lookup한다.
-		 * 표준입력으로 console을 통해 입력을 받아 
-		 * 1일 경우 qotd를 출력하고
-		 * 2일 경우 wotd를 출력하고
-		 * 3일 경우 종료한다.
 		 * Make XotdService interface, lookup the object.
 		 * Input from user through stdin.
 		 * When input is 1, print qotd
