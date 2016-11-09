@@ -10,9 +10,9 @@ public class ServerMain {
 	public static void main(String[] args) throws RemoteException {
 		System.out.println("[RMI-hjgwak-Server] START");
 		// TODO Auto-generated method stub
-//		if (System.getSecurityManager() == null) {
-//			System.setSecurityManager(new RMISecurityManager());
-//		}
+		if (System.getSecurityManager() == null) {
+			System.setSecurityManager(new RMISecurityManager());
+		}
 		
 		/*
 		 * Allow portNumber for RMI by passing argument with -p option. Default 1099

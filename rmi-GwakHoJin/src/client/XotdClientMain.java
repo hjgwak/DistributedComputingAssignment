@@ -18,9 +18,9 @@ public class XotdClientMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("[RMI-hjgwak-Client] START");
-//		if (System.getSecurityManager() == null) {
-//			System.setSecurityManager(new RMISecurityManager());
-//		}
+		if (System.getSecurityManager() == null) {
+			System.setSecurityManager(new RMISecurityManager());
+		}
 		
 		/*
 		 * Allow portNumber for RMI by passing argument with -p option.
